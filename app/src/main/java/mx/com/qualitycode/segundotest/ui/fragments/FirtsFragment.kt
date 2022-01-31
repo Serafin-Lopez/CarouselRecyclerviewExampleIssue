@@ -57,13 +57,13 @@ class FirtsFragment : Fragment(), FollowingMainListCallback {
 
         sampleViewModel.message.value = "hi"
 
+        recyclerViewFollowingMain.adapter = adapter
+        recyclerViewFollowingMain.set3DItem(true)
+        recyclerViewFollowingMain.setAlpha(true)
+
         sampleViewModel.message.observe(viewLifecycleOwner, Observer { messsage ->
 
             messsage?.let {
-
-                recyclerViewFollowingMain.adapter = adapter
-                recyclerViewFollowingMain.set3DItem(true)
-                recyclerViewFollowingMain.setAlpha(true)
 
                 val data = ArrayList<ProfilesSuggestedModel.Data>()
                 data.add(ProfilesSuggestedModel.Data("1241",1,"Marco","https://images.unsplash.com/photo-1583002083815-8c6305bd56a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW9kYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",""))
@@ -73,8 +73,8 @@ class FirtsFragment : Fragment(), FollowingMainListCallback {
                 data.add(ProfilesSuggestedModel.Data("1241",1,"Perez","https://media.istockphoto.com/photos/portrait-of-four-runners-resting-in-a-public-park-staircase-picture-id841585176?k=20&m=841585176&s=612x612&w=0&h=4fVZIwcBv-fiSgn-gvc69DgkqGrlMrSMbQrL6i-3Luo=",""))
 
                 adapter.setData(data)
-
                 Toast.makeText(context,it,Toast.LENGTH_SHORT).show()
+
             }
 
         })
