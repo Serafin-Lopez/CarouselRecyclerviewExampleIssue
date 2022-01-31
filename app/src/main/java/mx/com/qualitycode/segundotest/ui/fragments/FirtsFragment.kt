@@ -90,7 +90,7 @@ class FirtsFragment : Fragment(), FollowingMainListCallback {
 
     }
 
-    fun replaceFragmentWith(fragment: Fragment) {
+    private fun replaceFragmentWith(fragment: Fragment) {
         fragmentManager?.beginTransaction()
             ?.replace(my_nav_host_fragment.id, fragment)
             ?.addToBackStack(null)

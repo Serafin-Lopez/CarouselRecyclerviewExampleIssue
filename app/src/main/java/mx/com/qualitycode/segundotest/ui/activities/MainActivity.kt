@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun replaceFragmentWith(fragment: Fragment) {
+    private fun replaceFragmentWith(fragment: Fragment) {
         supportFragmentManager?.beginTransaction()
             ?.replace(my_nav_host_fragment.id, fragment)
             ?.addToBackStack(null)
